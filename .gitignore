@@ -1,0 +1,241 @@
+# ===========================
+# Environment & Secrets
+# ===========================
+.env
+.env.*
+!.env.example
+!.env.local.example
+*.env
+.envrc
+secrets/
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+credentials.json
+service-account*.json
+*_credentials.json
+*.secret
+
+# ===========================
+# Python
+# ===========================
+venv/
+env/
+.venv/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.mypy_cache/
+.ruff_cache/
+.pytype/
+pyrightconfig.json
+
+# ===========================
+# Node.js
+# ===========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+.npm
+.yarn/cache
+.yarn/unplugged
+.yarn/install-state.gz
+
+# ===========================
+# Next.js
+# ===========================
+.next/
+out/
+.vercel
+.turbo
+
+# TypeScript incremental build cache
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# ===========================
+# Docker
+# ===========================
+docker-compose.override.yml
+.dockerignore
+
+# ===========================
+# Database
+# ===========================
+*.db
+*.sqlite
+*.sqlite3
+dump.rdb
+*.rdb
+*.sql
+!schema.sql
+!migrations/*.sql
+
+# ===========================
+# Logs
+# ===========================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# ===========================
+# IDE & Editors
+# ===========================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.settings/
+*.iml
+
+# ===========================
+# OS Files
+# ===========================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ===========================
+# Repository Clones (temp)
+# ===========================
+repo_clones/
+clones/
+temp/
+tmp/
+
+# ===========================
+# Build & Compiled
+# ===========================
+*.exe
+*.dll
+*.dylib
+*.class
+*.jar
+*.war
+
+# ===========================
+# Testing
+# ===========================
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+playwright/.cache/
+
+# ===========================
+# Backend Debug Scripts
+# ===========================
+backend/check_db.py
+backend/check_deps.py
+backend/dump_diagrams.py
+backend/generate_repo_doc.py
+backend/inspect_docs.py
+backend/list_models.py
+backend/verify_deps.py
+backend/repo_12_diagrams.mermaid
+backend/migrate_*.py
+backend/test_*.py
+
+# ===========================
+# Setup Scripts
+# ===========================
+setup.ps1
+setup.sh
+
+# ===========================
+# Misc
+# ===========================
+*.bak
+*.backup
+*.old
+*.orig
+*.rej
+*.patch
+.cache/
+*.lock
+!package-lock.json
+!yarn.lock
+!pnpm-lock.yaml
+
+# ===========================
+# Nginx
+# ===========================
+nginx/ssl/
+nginx/*.pid
+nginx/*.log
+
+# ===========================
+# Scripts
+# ===========================
+scripts/*.log
+
+# ===========================
+# AI Tools & Local Caches
+# (Claude Code, CodeGraph, Cursor, Aider, etc. — local-only state)
+# ===========================
+.claude/
+.codegraph/
+.cursor/
+.cursorrules
+.aider*
+.continue/
+.windsurf/
+.copilot/
+CLAUDE.md
+AGENTS.md
+.github/copilot-instructions.md
+
+# ===========================
+# Local Notes & Scratch
+# ===========================
+TODO.local.md
+NOTES.local.md
+scratch/
+*.scratch.md

@@ -1,0 +1,49 @@
+# FastAPI and server dependencies
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+python-multipart==0.0.6
+
+# Database
+sqlalchemy==2.0.25
+psycopg2-binary==2.9.9
+alembic==1.13.1
+
+# Redis and background jobs
+redis==5.0.1
+rq==1.16.1
+celery==5.3.6
+
+# Vector database
+qdrant-client==1.7.3
+
+# AI and embeddings
+# (LLM calls go to NVIDIA NIM via plain HTTP — no SDK needed)
+sentence-transformers==2.3.1
+transformers==4.37.2
+# torch is installed separately from the CPU wheel index in the Dockerfile.
+# Keeping it out of this file prevents the default CUDA-bundled wheel from being pulled.
+numpy<2.0.0
+
+# GitHub API
+PyGithub==2.1.1
+requests==2.31.0
+
+# Security and authentication
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-dotenv==1.0.0
+cryptography==42.0.0
+
+# Code analysis
+bandit==1.7.6
+pylint==3.0.3
+
+# Utilities
+pydantic==2.5.3
+pydantic-settings==2.1.0
+httpx==0.26.0
+aiofiles==23.2.1
+GitPython==3.1.41
+tree-sitter==0.21.0
+tree-sitter-languages==1.10.2
+

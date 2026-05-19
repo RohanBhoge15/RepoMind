@@ -1,0 +1,36 @@
+# syntax=docker/dockerfile:1.7
+# BuildKit-cached worker image. Shares pip and HuggingFace caches with the
+# API image when built on the same host.
+
+FROM python:3.11-slim
+
+WORKDIR /app
+
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+    --mount=type=cache,target=/var/lib/apt,sharing=locked \
+    apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    git \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt .
+
+RUN --mount=type=cache,target=/root/.cache/pip \
+    pip install --upgrade pip && \
+    pip install --extra-index-url https://download.pytorch.org/whl/cpu \
+        torch==2.1.2+cpu && \
+    pip install -r requirements.txt
+
+COPY . .
+
+RUN mkdir -p /app/repo_clones /app/logs /app/.cache/huggingface
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    WORKER_MODE=true \
+    HF_HOME=/app/.cache/huggingface \
+    TRANSFORMERS_CACHE=/app/.cache/huggingface \
+    SENTENCE_TRANSFORMERS_HOME=/app/.cache/huggingface
+
+CMD ["python", "run_worker_windows.py"]
